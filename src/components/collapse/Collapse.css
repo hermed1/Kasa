@@ -1,0 +1,59 @@
+.collapse {
+  width: 90%;
+  background-color: #f6f6f6;
+  margin-bottom: 20px;
+  position: relative;
+}
+.collapse__state {
+  display: none;
+}
+.collapse__p {
+  display: block;
+}
+.collapse__button {
+  background-color: #ff6060;
+  color: #fff;
+  width: 100%;
+  text-align: start;
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 24px;
+}
+@media screen and (max-width: 768px) {
+  .collapse__button {
+    font-size: 13px;
+  }
+}
+.collapse__para {
+  text-align: left;
+  padding: 15px;
+  margin: 0;
+  color: #ff6060;
+  font-size: 24px;
+}
+@media screen and (max-width: 768px) {
+  .collapse__para {
+    font-size: 12px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+}
+@media screen and (max-width: 768px) {
+  .arrow {
+    width: 13px;
+    height: 10px;
+    top: 10px;
+  }
+}
+.arrow_display {
+  display: inline;
+}
+.arrow_invisible {
+  display: none;
+}/*# sourceMappingURL=Collapse.css.map */

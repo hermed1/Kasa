@@ -1,7 +1,9 @@
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
   align-items: center;
   @media screen and (max-width: 768px) {
     padding: 20px;

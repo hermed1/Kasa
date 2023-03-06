@@ -1,0 +1,14 @@
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+}
+.footer__p {
+  color: #fff;
+}
+.footer__img {
+  width: 120px;
+}/*# sourceMappingURL=Footer.css.map */

@@ -1,0 +1,14 @@
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  &__p {
+    color: #fff;
+  }
+  &__img {
+    width: 120px;
+  }
+}

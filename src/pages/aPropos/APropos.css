@@ -1,0 +1,15 @@
+.Apropos {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Apropos__banner {
+  width: 100%;
+  height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}/*# sourceMappingURL=APropos.css.map */

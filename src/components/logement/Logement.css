@@ -1,0 +1,35 @@
+.carousel {
+  position: relative;
+}
+.carousel__container {
+  padding: 30px 10%;
+}
+.carousel__image {
+  width: 100%;
+  height: 415px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+.carousel__arrow {
+  width: 47px;
+  height: 79px;
+  cursor: pointer;
+}
+.carousel__arrow__left {
+  position: absolute;
+  top: 190px;
+  left: 30px;
+}
+.carousel__arrow__right {
+  position: absolute;
+  top: 190px;
+  right: 30px;
+}
+.carousel__count {
+  position: absolute;
+  font-size: 18px;
+  color: #fff;
+  bottom: 5px;
+  left: 50%;
+}/*# sourceMappingURL=Logement.css.map */

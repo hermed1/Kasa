@@ -5,11 +5,13 @@ a {
 .nav {
   display: flex;
   justify-content: space-between;
-  width: 150px;
+  width: 190px;
+  font-size: 24px;
 }
 @media screen and (max-width: 768px) {
   .nav {
-    width: 130px;
+    width: 100px;
+    font-size: 12px;
   }
 }
 .nav__link {

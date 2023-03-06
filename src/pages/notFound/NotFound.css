@@ -1,0 +1,40 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  color: #ff6060;
+}
+.notFound__404 {
+  font-size: 288px;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .notFound__404 {
+    font-size: 96px;
+    margin-top: 50px;
+  }
+}
+.notFound__p {
+  font-size: 36px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 768px) {
+  .notFound__p {
+    font-size: 18px;
+    padding: 0 30px;
+    text-align: center;
+  }
+}
+.notFound__link {
+  font-size: 18px;
+  margin: 70px 0;
+  color: #ff6060;
+  text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+  .notFound__link {
+    font-size: 14px;
+    margin-top: 50px;
+    margin-bottom: 150px;
+  }
+}/*# sourceMappingURL=NotFound.css.map */

@@ -1,0 +1,53 @@
+.collapse {
+  width: 90%;
+  background-color: #f6f6f6;
+  margin-bottom: 20px;
+  position: relative;
+  &__state {
+    display: none;
+  }
+  &__p {
+    display: block;
+  }
+  &__button {
+    background-color: #ff6060;
+    color: #fff;
+    width: 100%;
+    text-align: start;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    @media screen and (max-width: 768px) {
+      font-size: 13px;
+    }
+  }
+  &__para {
+    text-align: left;
+    padding: 15px;
+    margin: 0;
+    color: #ff6060;
+    font-size: 24px;
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+}
+.arrow {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  @media screen and (max-width: 768px) {
+    width: 13px;
+    height: 10px;
+    top: 10px;
+  }
+
+  &_display {
+    display: inline;
+  }
+  &_invisible {
+    display: none;
+  }
+}
