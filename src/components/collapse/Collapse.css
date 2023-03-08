@@ -38,6 +38,9 @@
     font-size: 12px;
   }
 }
+.collapse__logement {
+  width: 45%;
+}
 
 .arrow {
   position: absolute;

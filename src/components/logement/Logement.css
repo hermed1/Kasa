@@ -32,4 +32,47 @@
   color: #fff;
   bottom: 5px;
   left: 50%;
+}
+
+.host__tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.host__tag {
+  background-color: #ff6060;
+  width: 115px;
+  height: 25px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  padding: 3px 10px;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.housing {
+  color: #ff6060;
+  text-align: start;
+}
+.housing__title {
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 51.34px;
+  margin-top: 15px;
+}
+.housing__location {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px;
+}
+.housing__equipments {
+  margin: 0;
+  font-size: 18px;
+}
+
+.collapse__container {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=Logement.css.map */
