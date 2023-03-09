@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import datas from '../../assets/logements.json';
-import arrowLeft from '../../assets/carousel_arrow_left.png';
-import arrowRight from '../../assets/carousel_arrow_right.png';
+
 import './Logement.css';
 import Collapse from '../collapse/Collapse';
 import review_star from '../../assets/review_star.png';
+import Gallery from '../gallery/Gallery';
 
 const Logement = () => {
   const params = useParams();
@@ -14,9 +14,8 @@ const Logement = () => {
   const [picture, setPicture] = useState(null);
   const [pictures, setPictures] = useState([]);
   const numberOfPictures = pictures && pictures.length;
-  const host = logement && logement.host;
 
-  const indexCount = pictures && pictures.indexOf(picture) + 1;
+  const host = logement && logement.host;
 
   useEffect(() => {
     fetch(datas)
@@ -26,86 +25,48 @@ const Logement = () => {
     pictures && setPicture(pictures[0]);
   }, [logement, pictures]);
 
-  const handleClickLeft = () => {
-    const index = pictures.indexOf(picture);
-    if (index > 0) {
-      setPicture(pictures[index - 1]);
-    } else {
-      setPicture(pictures[pictures.length - 1]);
-    }
-  };
-
-  const handleClickRight = () => {
-    const index = pictures.indexOf(picture);
-    if (index < pictures.length - 1) {
-      setPicture(pictures[index + 1]);
-    } else {
-      setPicture(pictures[0]);
-    }
-  };
-
   return (
     <div className='carousel__container'>
-      <div className='carousel'>
-        {picture && (
-          <img className='carousel__image' src={picture} alt='image_logement' />
-        )}
-        {numberOfPictures > 1 ? (
-          <img
-            className='carousel__arrow carousel__arrow__left'
-            src={arrowLeft}
-            alt='arrowLeft'
-            onClick={() => handleClickLeft()}
-          />
-        ) : (
-          ''
-        )}
-        {numberOfPictures > 1 ? (
-          <img
-            className='carousel__arrow carousel__arrow__right'
-            src={arrowRight}
-            alt='arrowRight'
-            onClick={() => handleClickRight()}
-          />
-        ) : (
-          ''
-        )}
-        {numberOfPictures > 1 ? (
-          <p className='carousel__count'>
-            {indexCount}/{numberOfPictures}
-          </p>
-        ) : (
-          ''
-        )}
-      </div>
-      <div className='housing'>
-        <h2 className='housing__title'>{logement.title}</h2>
-        <p className='housing__location'>{logement.location}</p>
-      </div>
-      <div className='host__tags'>
-        {logement.tags &&
-          logement.tags.map((tag, index) => (
-            <p key={index} className='host__tag'>
-              {tag}
-            </p>
-          ))}
-      </div>
-
-      {host && (
-        <div className='host'>
-          <div className='host'>
-            <p className='host__name'>{host.name}</p>
-            <img className='host__picture' src={host.picture} alt='' />
-          </div>
+      <Gallery
+        pictures={pictures}
+        picture={picture}
+        setPicture={setPicture}
+        numberOfPictures={numberOfPictures}
+      />
+      <div className='housing__container'>
+        <div className='housing'>
           <div>
-            <img src={review_star} alt='note' />
+            <h2 className='housing__title'>{logement.title}</h2>
+            <p className='housing__location'>{logement.location}</p>
+          </div>
+          <div className='host__tags'>
+            {logement.tags &&
+              logement.tags.map((tag, index) => (
+                <p key={index} className='host__tag'>
+                  {tag}
+                </p>
+              ))}
           </div>
         </div>
-      )}
+        {host && (
+          <div className='host'>
+            <div className='host__infos'>
+              <p className='host__name'>{host.name}</p>
+              <img className='host__picture' src={host.picture} alt='' />
+            </div>
+            <div className='host__stars'>
+              <img src={review_star} alt='note' />
+            </div>
+          </div>
+        )}
+      </div>
       <div className='collapse__container'>
         <Collapse
           title='Description'
-          content={logement.description}
+          content={
+            <p className='housing__description'>{logement.description}</p>
+          }
+          // content={logement.description}
           className='collapse__logement'
         />
         {logement.equipments && (

@@ -34,6 +34,31 @@
   left: 50%;
 }
 
+.host {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+.host__infos {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+.host__picture {
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+}
+.host__name {
+  width: 70px;
+  text-align: start;
+  font-size: 18px;
+  color: #ff6060;
+}
+.host__stars {
+  margin-bottom: 30px;
+}
 .host__tags {
   display: flex;
   flex-wrap: wrap;
@@ -54,6 +79,11 @@
 .housing {
   color: #ff6060;
   text-align: start;
+  width: 55%;
+}
+.housing__container {
+  display: flex;
+  justify-content: space-between;
 }
 .housing__title {
   font-size: 36px;
@@ -69,6 +99,9 @@
 }
 .housing__equipments {
   margin: 0;
+  font-size: 18px;
+}
+.housing__description {
   font-size: 18px;
 }
 

@@ -34,6 +34,30 @@
   }
 }
 .host {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  &__infos {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+  &__picture {
+    border-radius: 100%;
+    width: 64px;
+    height: 64px;
+  }
+  &__name {
+    width: 70px;
+    text-align: start;
+    font-size: 18px;
+    color: #ff6060;
+  }
+  &__stars {
+    margin-bottom: 30px;
+  }
+
   &__tags {
     display: flex;
     flex-wrap: wrap;
@@ -54,6 +78,11 @@
 .housing {
   color: #ff6060;
   text-align: start;
+  width: 55%;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
   &__title {
     font-size: 36px;
     font-weight: 500;
@@ -68,6 +97,9 @@
   }
   &__equipments {
     margin: 0;
+    font-size: 18px;
+  }
+  &__description {
     font-size: 18px;
   }
 }
