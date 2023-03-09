@@ -31,13 +31,13 @@ const Collapse = ({ title, content, className }) => {
         }
       />
 
-      <p
+      <div
         className={
           collapseState ? 'collapse__p collapse__para' : 'collapse__state'
         }
       >
         {content}
-      </p>
+      </div>
     </div>
   );
 };
