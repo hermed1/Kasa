@@ -3,7 +3,7 @@ import './Collapse.css';
 import arrowtop from '../../assets/Vector_top.png';
 import arrowbottom from '../../assets/Vector_bottom.png';
 
-const Collapse = ({ title, content, className }) => {
+const Collapse = ({ title, content, className, classNameButton }) => {
   const [collapseState, setCollapseState] = useState(false);
   const handleClickCollapse = () => {
     setCollapseState(!collapseState);
@@ -11,7 +11,7 @@ const Collapse = ({ title, content, className }) => {
   return (
     <div className={`collapse ${className}`}>
       <button
-        className='collapse__button'
+        className={`collapse__button ${classNameButton}`}
         onClick={() => handleClickCollapse()}
       >
         {title}

@@ -4,8 +4,8 @@ import datas from '../../assets/logements.json';
 
 import './Logement.css';
 import Collapse from '../collapse/Collapse';
-import review_star from '../../assets/review_star.png';
 import Gallery from '../gallery/Gallery';
+import Rating from '../rating/Rating';
 
 const Logement = () => {
   const params = useParams();
@@ -14,8 +14,8 @@ const Logement = () => {
   const [picture, setPicture] = useState(null);
   const [pictures, setPictures] = useState([]);
   const numberOfPictures = pictures && pictures.length;
-
   const host = logement && logement.host;
+  const rating = logement && parseInt(logement.rating);
 
   useEffect(() => {
     fetch(datas)
@@ -55,7 +55,7 @@ const Logement = () => {
               <img className='host__picture' src={host.picture} alt='' />
             </div>
             <div className='host__stars'>
-              <img src={review_star} alt='note' />
+              <Rating rating={logement.rating} />
             </div>
           </div>
         )}
@@ -66,8 +66,8 @@ const Logement = () => {
           content={
             <p className='housing__description'>{logement.description}</p>
           }
-          // content={logement.description}
-          className='collapse__logement'
+          className='collapse__logement collapse__logement__button '
+          classNameButton='collapse__logement__button'
         />
         {logement.equipments && (
           <Collapse
@@ -78,6 +78,7 @@ const Logement = () => {
               </p>
             ))}
             className='collapse__logement'
+            classNameButton='collapse__logement__button'
           />
         )}
       </div>

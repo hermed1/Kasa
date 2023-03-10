@@ -4,6 +4,12 @@
 .carousel__container {
   padding: 30px 10%;
 }
+@media screen and (max-width: 767px) {
+  .carousel__container {
+    padding: 0 20px;
+    margin-top: -5px;
+  }
+}
 .carousel__image {
   width: 100%;
   height: 415px;
@@ -11,20 +17,44 @@
      object-fit: cover;
   border-radius: 15px;
 }
+@media screen and (max-width: 767px) {
+  .carousel__image {
+    width: 100%;
+    height: 255px;
+  }
+}
 .carousel__arrow {
   width: 47px;
   height: 79px;
   cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .carousel__arrow {
+    width: 11.5px;
+    height: 19.8px;
+  }
 }
 .carousel__arrow__left {
   position: absolute;
   top: 190px;
   left: 30px;
 }
+@media screen and (max-width: 767px) {
+  .carousel__arrow__left {
+    top: 127px;
+    left: 10px;
+  }
+}
 .carousel__arrow__right {
   position: absolute;
   top: 190px;
   right: 30px;
+}
+@media screen and (max-width: 767px) {
+  .carousel__arrow__right {
+    top: 127px;
+    right: 10px;
+  }
 }
 .carousel__count {
   position: absolute;
@@ -33,6 +63,11 @@
   bottom: 5px;
   left: 50%;
 }
+@media screen and (max-width: 768px) {
+  .carousel__count {
+    display: none;
+  }
+}
 
 .host {
   display: flex;
@@ -40,21 +75,45 @@
   align-items: start;
   justify-content: space-between;
 }
+@media screen and (max-width: 768px) {
+  .host {
+    flex-direction: row-reverse;
+    align-items: baseline;
+  }
+}
 .host__infos {
   display: flex;
   justify-content: space-between;
-  width: 200px;
+  width: 150px;
+  align-items: center;
+  margin-top: 5px;
+}
+@media screen and (max-width: 768px) {
+  .host__infos {
+    width: 115px;
+  }
 }
 .host__picture {
   border-radius: 100%;
   width: 64px;
   height: 64px;
 }
+@media screen and (max-width: 768px) {
+  .host__picture {
+    width: 32px;
+    height: 32px;
+  }
+}
 .host__name {
   width: 70px;
-  text-align: start;
+  text-align: end;
   font-size: 18px;
   color: #ff6060;
+}
+@media screen and (max-width: 768px) {
+  .host__name {
+    font-size: 12px;
+  }
 }
 .host__stars {
   margin-bottom: 30px;
@@ -63,17 +122,36 @@
   display: flex;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 768px) {
+  .host__tags {
+    margin-top: 10px;
+  }
+}
 .host__tag {
   background-color: #ff6060;
-  width: 115px;
+  width: 125px;
   height: 25px;
   border-radius: 10px;
   color: #fff;
   font-size: 14px;
-  padding: 3px 10px;
+  padding: 3px 10px 1px 10px;
   text-align: center;
   margin-right: 20px;
   margin-bottom: 30px;
+  text-overflow: clip;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .host__tag {
+    font-size: 10px;
+    border-radius: 5px;
+    margin: 0;
+    width: 84px;
+    height: 18px;
+    padding: 5px 5px 2px 5px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
 }
 
 .housing {
@@ -81,9 +159,19 @@
   text-align: start;
   width: 55%;
 }
+@media screen and (max-width: 767px) {
+  .housing {
+    width: 100%;
+  }
+}
 .housing__container {
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .housing__container {
+    flex-direction: column;
+  }
 }
 .housing__title {
   font-size: 36px;
@@ -92,10 +180,23 @@
   line-height: 51.34px;
   margin-top: 15px;
 }
+@media screen and (max-width: 767px) {
+  .housing__title {
+    font-size: 18px;
+    margin-top: 5px;
+    line-height: 25.67px;
+  }
+}
 .housing__location {
   font-size: 18px;
   font-weight: 500;
   margin: 5px;
+}
+@media screen and (max-width: 767px) {
+  .housing__location {
+    margin: 0;
+    font-size: 14px;
+  }
 }
 .housing__equipments {
   margin: 0;
@@ -103,9 +204,15 @@
 }
 .housing__description {
   font-size: 18px;
+  margin: 0;
 }
 
 .collapse__container {
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .collapse__container {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=Logement.css.map */

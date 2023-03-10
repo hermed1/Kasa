@@ -3,6 +3,11 @@
   margin-bottom: 20px;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .collapse {
+    width: 100%;
+  }
+}
 .collapse__state {
   display: none;
 }
@@ -16,7 +21,7 @@
   text-align: start;
   border-radius: 10px;
   border: none;
-  padding: 8px;
+  padding: 8px 10px 8px 15px;
   cursor: pointer;
   font-size: 24px;
 }
@@ -40,7 +45,19 @@
 }
 .collapse__logement {
   width: 45%;
-  font-size: 18px !important;
+}
+@media screen and (max-width: 768px) {
+  .collapse__logement {
+    width: 100%;
+  }
+}
+.collapse__logement__button {
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  .collapse__logement__button {
+    font-size: 13px;
+  }
 }
 
 .arrow {

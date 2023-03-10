@@ -1,0 +1,10 @@
+.rating_star {
+  width: 30px;
+  height: 30px;
+}
+@media screen and (max-width: 768px) {
+  .rating_star {
+    width: 15px;
+    height: 15px;
+  }
+}/*# sourceMappingURL=Rating.css.map */
