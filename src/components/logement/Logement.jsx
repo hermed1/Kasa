@@ -15,7 +15,7 @@ const Logement = () => {
   const [pictures, setPictures] = useState([]);
   const numberOfPictures = pictures && pictures.length;
   const host = logement && logement.host;
-  const rating = logement && parseInt(logement.rating);
+  // const rating = logement && parseInt(logement.rating);
 
   useEffect(() => {
     fetch(datas)
@@ -23,7 +23,7 @@ const Logement = () => {
       .catch((err) => console.log(err));
     logement && setPictures(logement.pictures);
     pictures && setPicture(pictures[0]);
-  }, [logement, pictures]);
+  }, [pageId, logement, pictures]);
 
   return logement ? (
     <div className='carousel__container'>
