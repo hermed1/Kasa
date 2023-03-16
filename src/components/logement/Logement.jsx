@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import datas from '../../assets/logements.json';
-
+import NotFound from '../../pages/notFound/NotFound';
 import './Logement.css';
 import Collapse from '../collapse/Collapse';
 import Gallery from '../gallery/Gallery';
@@ -25,7 +25,7 @@ const Logement = () => {
     pictures && setPicture(pictures[0]);
   }, [logement, pictures]);
 
-  return (
+  return logement ? (
     <div className='carousel__container'>
       <Gallery
         pictures={pictures}
@@ -83,6 +83,8 @@ const Logement = () => {
         )}
       </div>
     </div>
+  ) : (
+    <NotFound />
   );
 };
 
