@@ -15,7 +15,6 @@ const Logement = () => {
   const [pictures, setPictures] = useState([]);
   const numberOfPictures = pictures && pictures.length;
   const host = logement && logement.host;
-  // const rating = logement && parseInt(logement.rating);
 
   useEffect(() => {
     fetch(datas)

@@ -4,12 +4,13 @@ import review_star_grey from '../../assets/review_star_grey.png';
 import './Rating.css';
 
 const Rating = ({ rating }) => {
+  // creating an array of length equal to the rating input value
   const ratingArray = Array.from({ length: rating });
+  // creating an array of length which is subtraction of 5 minus the rating input value
   const greyStarsArray = Array.from({ length: 5 - rating });
-  console.log(greyStarsArray);
   return (
     <div>
-      {ratingArray.map((index) => (
+      {ratingArray.map((_, index) => (
         <img
           key={index}
           src={review_star}
@@ -17,9 +18,9 @@ const Rating = ({ rating }) => {
           className='rating_star'
         />
       ))}
-      {greyStarsArray.map((index) => (
+      {greyStarsArray.map((_, index) => (
         <img
-          key={index}
+          key={`grey-${index}`}
           src={review_star_grey}
           alt='grey star'
           className='rating_star'
