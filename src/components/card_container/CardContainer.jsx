@@ -5,21 +5,25 @@ import './CardContainer.css';
 import { Link } from 'react-router-dom';
 
 const CardContainer = () => {
+  // Declare a state variable to hold the list of logements
   const [listeLogements, setListLogements] = useState([]);
+
+  // Fetch the logements data and set it to the state variable when the component mounts
   useEffect(() => {
     fetch(datas)
       .then(setListLogements(datas))
       .catch((err) => console.log(err));
   }, []);
+
   return (
     <div className='card__container'>
-      {/* renvoie la valeur de l'opérande de droite si les deux valeurs sont true. 
-      = ici le résultat du map */}
+      {/* Check if the listeLogements array has elements */}
       {listeLogements.length > 0 &&
+        // Map through the listeLogements array and create a Card component for each logement
         listeLogements.map((logement) => (
-          <Link to={`logement/${logement.id}`}>
+          // Use the Link component to navigate to the logement's detail page
+          <Link key={logement.id} to={`logement/${logement.id}`}>
             <Card
-              key={logement.id}
               id={logement.id}
               title={logement.title}
               image={logement.cover}

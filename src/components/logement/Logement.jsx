@@ -8,14 +8,17 @@ import Gallery from '../gallery/Gallery';
 import Rating from '../rating/Rating';
 
 const Logement = () => {
+  // Get the URL parameter for the product ID
   const params = useParams();
   const pageId = params.productId;
+
   const [logement, setLogement] = useState({});
   const [picture, setPicture] = useState(null);
   const [pictures, setPictures] = useState([]);
   const numberOfPictures = pictures && pictures.length;
   const host = logement && logement.host;
 
+  // Fetch the data and set state variables when the component mounts or when dependencies update
   useEffect(() => {
     fetch(datas)
       .then(setLogement(datas.find((element) => element.id === pageId)))
@@ -26,6 +29,7 @@ const Logement = () => {
 
   return logement ? (
     <div className='carousel__container'>
+      {/* Display the image gallery */}
       <Gallery
         pictures={pictures}
         picture={picture}
@@ -35,9 +39,11 @@ const Logement = () => {
       <div className='housing__container'>
         <div className='housing'>
           <div>
+            {/* Display the title and location of the logement */}
             <h2 className='housing__title'>{logement.title}</h2>
             <p className='housing__location'>{logement.location}</p>
           </div>
+          {/* Display the tags associated with the logement */}
           <div className='host__tags'>
             {logement.tags &&
               logement.tags.map((tag, index) => (
@@ -47,12 +53,14 @@ const Logement = () => {
               ))}
           </div>
         </div>
+        {/* Display the host's information */}
         {host && (
           <div className='host'>
             <div className='host__infos'>
               <p className='host__name'>{host.name}</p>
               <img className='host__picture' src={host.picture} alt='' />
             </div>
+            {/* Display the rating of the logement */}
             <div className='host__stars'>
               <Rating rating={logement.rating} />
             </div>
@@ -60,6 +68,7 @@ const Logement = () => {
         )}
       </div>
       <div className='collapse__container'>
+        {/* Display the description of the logement in a collapsible component */}
         <Collapse
           title='Description'
           content={
@@ -68,6 +77,7 @@ const Logement = () => {
           className='collapse__logement collapse__logement__button '
           classNameButton='collapse__logement__button'
         />
+        {/* Display the list of equipment in a collapsible component */}
         {logement.equipments && (
           <Collapse
             title='Equipements'
