@@ -17,9 +17,8 @@ const CardContainer = () => {
       = ici le résultat du map */}
       {listeLogements.length > 0 &&
         listeLogements.map((logement) => (
-          <Link to={`logement/${logement.id}`}>
+          <Link key={logement.id} to={`logement/${logement.id}`}>
             <Card
-              key={logement.id}
               id={logement.id}
               title={logement.title}
               image={logement.cover}
